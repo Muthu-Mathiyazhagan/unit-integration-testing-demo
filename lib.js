@@ -42,3 +42,9 @@ module.exports.notifyCustomer = function (order) {
 
   mail.send(customer.email, 'Your order was placed successfully.');
 }
+
+// Testing a function to remove "PM" from 8.00PM doubt clear to SriRam 9*2*7*0*0* ; 
+module.exports.removeMeridiem = function (time) {
+  let removeAM = time.replace(/am/i, ''); // Remove the 'am' from whole string (Upper case and Lower case)
+  return removeAM.replace(/pm/i, '');
+}

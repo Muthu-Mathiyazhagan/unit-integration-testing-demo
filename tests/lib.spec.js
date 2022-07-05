@@ -18,7 +18,29 @@ describe(`absolute`, () => {
 
 describe('greet', () => {
     it('should return the greeting message', () => {
-        const result = lib.greet('Mosh');
-        expect(result).toMatch(/Mosh/);
+        expect(lib.greet('Mosh')).toMatch(/Mosh/);
     })
+});
+
+describe('get currencies', () => {
+    it('Should return array of currencies', () => {
+        const res = lib.getCurrencies();
+        expect(res).toEqual(expect.arrayContaining(['AUD', 'USD', 'EUR']))
+    })
+});
+
+describe.only('remove meriiem', () => {
+    it(`Should remove lower case 'am' from given time string`, () => {
+        expect(lib.removeMeridiem('8.00am')).toBe('8.00')
+    });
+    it(`Should remove lower case 'pm' from given time string`, () => {
+        expect(lib.removeMeridiem('8.00pm')).toBe('8.00')
+    });
+
+    it(`Should remove Upper case 'AM' from given time string`, () => {
+        expect(lib.removeMeridiem('8.00AM')).toBe('8.00')
+    });
+    it(`Should remove Upper case 'PM' from given time string`, () => {
+        expect(lib.removeMeridiem('8.00PM')).toBe('8.00')
+    });
 })
