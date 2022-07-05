@@ -30,17 +30,22 @@ describe('get currencies', () => {
 });
 
 describe.only('remove meriiem', () => {
+    let input = '8.00am';
+    let output = '8.00';
     it(`Should remove lower case 'am' from given time string`, () => {
-        expect(lib.removeMeridiem('8.00am')).toBe('8.00')
+        expect(lib.removeMeridiem(input)).toBe(output)
     });
-    it(`Should remove lower case 'pm' from given time string`, () => {
-        expect(lib.removeMeridiem('8.00pm')).toBe('8.00')
-    });
+    input = '8.00pm';
 
-    it(`Should remove Upper case 'AM' from given time string`, () => {
-        expect(lib.removeMeridiem('8.00AM')).toBe('8.00')
+    it(`Should remove lower case 'pm' from given time string`, () => {
+        expect(lib.removeMeridiem(input)).toBe(output)
     });
+    input = '8.00AM'
+    it(`Should remove Upper case 'AM' from given time string`, () => {
+        expect(lib.removeMeridiem(input)).toBe(output)
+    });
+    input = '8.00PM'
     it(`Should remove Upper case 'PM' from given time string`, () => {
-        expect(lib.removeMeridiem('8.00PM')).toBe('8.00')
+        expect(lib.removeMeridiem(input)).toBe(output)
     });
 })
