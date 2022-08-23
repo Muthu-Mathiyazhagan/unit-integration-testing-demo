@@ -18,7 +18,7 @@ describe(`absolute`, () => {
 
 describe('greet', () => {
     it('should return the greeting message', () => {
-        expect(lib.greet('Mosh')).toMatch(/Mosh/);
+        expect(lib.greet('Yaadhum Aanavan')).toMatch(/Yaadhum Aanavan/);
     })
 });
 
@@ -29,7 +29,7 @@ describe('get currencies', () => {
     })
 });
 
-describe.only('remove meriiem', () => {
+describe('remove meriiem', () => {
     let output = '8.00';
     it(`Should remove lower case 'am' from given time string`, () => {
         expect(lib.removeMeridiem('8.00am')).toBe(output)
