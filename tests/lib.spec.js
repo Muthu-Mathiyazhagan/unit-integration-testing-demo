@@ -1,6 +1,8 @@
 const lib = require('../lib')
 const fizzBuzz = require('../exercise1').fizzBuzz
 
+
+// We can group the similar test cases 
 describe(`absolute`, () => {
   it(`absolute - It should return positive number if input is positive number `, () => {
     expect(lib.absolute(1)).toBe(1)
@@ -46,6 +48,8 @@ describe('remove meriiem', () => {
     expect(lib.removeMeridiem('8.00PM')).toBe(output)
   })
 })
+
+// descripe.only : 'jest' will run "only" this group of test cases
 describe.only('fizzBuzz', () => {
   it('should return "FizzBuzz" if input can be divide by 5 and 3', () => {
     expect(fizzBuzz(15)).toBe('FizzBuzz')
@@ -63,6 +67,8 @@ describe.only('fizzBuzz', () => {
     expect(() => {
       fizzBuzz('15')
     }).toThrow('Input should be a number.')
+
+
     // Below code wont work : See the Details from JEST official Documents
     // You must wrap the code in a function, otherwise the error will not be caught and the assertion will fail.
     // https://jestjs.io/docs/expect#tothrowerror
