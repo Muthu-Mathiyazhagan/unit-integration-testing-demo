@@ -47,4 +47,5 @@ module.exports.notifyCustomer = function (order) {
 module.exports.removeMeridiem = function (time) {
   let removeAM = time.replace(/am/i, ''); // Remove the 'am' from whole string (Upper case and Lower case)
   return removeAM.replace(/pm/i, '');
+  
 }
